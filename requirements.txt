@@ -5,6 +5,6 @@ scikit-learn
 requests
 beautifulsoup4
 python-whois
-google-search-python
+googlesearch-python
 python-dateutil
 urllib3
