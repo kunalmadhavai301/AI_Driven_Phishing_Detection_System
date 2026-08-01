@@ -68,9 +68,26 @@
 
       <!-- Scanner Console Box -->
       <div class="scanner-box">
+        
+        <!-- Laser Sweep Line Effect -->
+        <div class="scanner-laser-line"></div>
+
+        <!-- Cyber Terminal Header -->
+        <div class="scanner-console-header">
+          <div class="terminal-dots">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="terminal-title"><i class="fa-solid fa-terminal" style="color: var(--color-cyan);"></i> NEURAL_INSPECTION_CONSOLE_V2.4</span>
+          </div>
+          <div class="console-status-badge">
+            <span class="pulse-green-dot"></span> HEURISTIC ENGINE ONLINE
+          </div>
+        </div>
+
         <form action="/result" method="POST" id="scanForm">
           <div class="scanner-input-container">
-            <i class="fa-solid fa-globe"></i>
+            <i class="fa-solid fa-globe input-globe-icon"></i>
             <input type="url" name="name" id="urlInput" class="scanner-input" placeholder="Enter target website URL (e.g. https://example.com)" required value="{{ name[0] if name else '' }}">
             <button type="submit" class="btn-scan" id="scanBtn">
               <i class="fa-solid fa-shield-cat"></i> <span id="btnTxt">Scan URL</span>
@@ -80,10 +97,10 @@
 
         <!-- Sample Test Pills -->
         <div class="sample-pills-row">
-          <span class="pill-title">Try sample URL:</span>
-          <span class="sample-pill-btn" onclick="fillUrl('https://www.google.com')"><i class="fa-brands fa-google"></i> Google (Safe)</span>
-          <span class="sample-pill-btn" onclick="fillUrl('http://free-paypal-login-verification.com/login.php')"><i class="fa-solid fa-triangle-exclamation"></i> Phishing Sample</span>
-          <span class="sample-pill-btn" onclick="fillUrl('https://github.com')"><i class="fa-brands fa-github"></i> GitHub (Safe)</span>
+          <span class="pill-title"><i class="fa-solid fa-bolt" style="color: var(--color-cyan); margin-right: 4px;"></i> Quick Test:</span>
+          <button type="button" class="sample-pill-btn" onclick="fillUrl('https://www.google.com')"><i class="fa-brands fa-google"></i> Google (Safe)</button>
+          <button type="button" class="sample-pill-btn" onclick="fillUrl('http://free-paypal-login-verification.com/login.php')"><i class="fa-solid fa-triangle-exclamation"></i> Phishing Sample</button>
+          <button type="button" class="sample-pill-btn" onclick="fillUrl('https://github.com')"><i class="fa-brands fa-github"></i> GitHub (Safe)</button>
         </div>
 
         <!-- Result Box -->
