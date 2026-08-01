@@ -12,7 +12,7 @@
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
   <!-- CSS -->
@@ -20,39 +20,39 @@
 </head>
 <body>
 
-  <!-- ======= Navigation Bar ======= -->
-  <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center justify-content-between" style="max-width: 1200px; margin: 0 auto; padding: 0 20px; height: 100%;">
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="header-container">
       
       <a href="{{ url_for('home') }}" class="nav-logo">
         <i class="fa-solid fa-shield-halved"></i>
         <span>PhishDetector</span>
       </a>
 
-      <nav class="nav-menu d-none d-lg-block">
-        <ul>
-          <li><a href="{{ url_for('home') }}">Home</a></li>
-          <li class="active"><a href="{{ url_for('usecases') }}">Case Studies</a></li>
-          <li class="drop-down"><a href="#">Help Center <i class="fa-solid fa-chevron-down" style="font-size: 11px; margin-left: 4px;"></i></a>
-            <ul>
-              <li><a href="https://safebrowsing.google.com/safebrowsing/report_phish/?hl=en" target="_blank" rel="noopener"><i class="fa-brands fa-google" style="margin-right: 8px;"></i> Report to Google</a></li>
-              <li><a href="https://www.phishingbox.com/phishing-iq-test" target="_blank" rel="noopener"><i class="fa-solid fa-graduation-cap" style="margin-right: 8px;"></i> Take Phishing Quiz</a></li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
+      <ul class="nav-links">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li class="active"><a href="{{ url_for('usecases') }}">Case Studies</a></li>
+        <li class="nav-dropdown">
+          <a href="#">Help Center <i class="fa-solid fa-chevron-down" style="font-size: 11px; margin-left: 4px;"></i></a>
+          <ul class="dropdown-menu-cyber">
+            <li><a href="https://safebrowsing.google.com/safebrowsing/report_phish/?hl=en" target="_blank" rel="noopener"><i class="fa-brands fa-google"></i> Report to Google</a></li>
+            <li><a href="https://www.phishingbox.com/phishing-iq-test" target="_blank" rel="noopener"><i class="fa-solid fa-graduation-cap"></i> Phishing IQ Quiz</a></li>
+          </ul>
+        </li>
+      </ul>
 
-      <a href="/static/assets/Phishing Website Identification.pdf" class="get-started-btn" download="Phishing_Security_Guide.pdf">
+      <a href="/static/assets/Phishing Website Identification.pdf" class="btn-header" download="Phishing_Security_Guide.pdf">
         <i class="fa-solid fa-download"></i> Download Guide
       </a>
+
     </div>
   </header>
 
   <!-- ======= Hero Banner ======= -->
-  <section style="padding: 140px 0 60px 0; text-align: center;">
-    <div class="container" style="max-width: 1000px; margin: 0 auto; padding: 0 20px;">
-      <div class="cyber-badge">
-        <i class="fa-solid fa-skull-crossbones"></i> THREAT ANALYSIS & CASE STUDIES
+  <section style="padding: 150px 0 60px 0; text-align: center;">
+    <div style="max-width: 1000px; margin: 0 auto; padding: 0 24px;">
+      <div class="hero-badge">
+        <span class="pulse-dot"></span> THREAT ANALYSIS & CASE STUDIES
       </div>
       <h1 class="hero-title">
         High-Profile <span>Phishing Data Breaches</span>
@@ -65,12 +65,12 @@
 
   <!-- ======= Case Studies Grid ======= -->
   <section style="padding-bottom: 100px;">
-    <div class="container" style="max-width: 1100px; margin: 0 auto; padding: 0 20px;">
-      <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+    <div class="section-wrapper" style="padding-top: 0;">
+      <div class="cards-grid">
         
         <!-- Case 1 -->
-        <div class="feature-card">
-          <div class="feature-icon-wrapper" style="color: #ef4444; border-color: rgba(239,68,68,0.3); background: rgba(239,68,68,0.1);">
+        <div class="cyber-card">
+          <div class="card-icon" style="color: #ef4444; border-color: rgba(239,68,68,0.3); background: rgba(239,68,68,0.1);">
             <i class="fa-solid fa-envelope-open-text"></i>
           </div>
           <span style="font-size: 12px; font-weight: 600; color: #ef4444; letter-spacing: 0.5px;">SPEAR PHISHING & SPOOFING</span>
@@ -81,8 +81,8 @@
         </div>
 
         <!-- Case 2 -->
-        <div class="feature-card">
-          <div class="feature-icon-wrapper" style="color: #f59e0b; border-color: rgba(245,158,11,0.3); background: rgba(245,158,11,0.1);">
+        <div class="cyber-card">
+          <div class="card-icon" style="color: #f59e0b; border-color: rgba(245,158,11,0.3); background: rgba(245,158,11,0.1);">
             <i class="fa-solid fa-building-user"></i>
           </div>
           <span style="font-size: 12px; font-weight: 600; color: #f59e0b; letter-spacing: 0.5px;">EMPLOYEE CREDENTIAL HARVESTING</span>
@@ -93,8 +93,8 @@
         </div>
 
         <!-- Case 3 -->
-        <div class="feature-card">
-          <div class="feature-icon-wrapper" style="color: #6366f1; border-color: rgba(99,102,241,0.3); background: rgba(99,102,241,0.1);">
+        <div class="cyber-card">
+          <div class="card-icon" style="color: #6366f1; border-color: rgba(99,102,241,0.3); background: rgba(99,102,241,0.1);">
             <i class="fa-solid fa-film"></i>
           </div>
           <span style="font-size: 12px; font-weight: 600; color: #6366f1; letter-spacing: 0.5px;">APT & SPEAR-PHISHING RECONNAISSANCE</span>
@@ -105,8 +105,8 @@
         </div>
 
         <!-- Case 4 -->
-        <div class="feature-card">
-          <div class="feature-icon-wrapper" style="color: #10b981; border-color: rgba(16,185,129,0.3); background: rgba(16,185,129,0.1);">
+        <div class="cyber-card">
+          <div class="card-icon" style="color: #10b981; border-color: rgba(16,185,129,0.3); background: rgba(16,185,129,0.1);">
             <i class="fa-solid fa-hospital"></i>
           </div>
           <span style="font-size: 12px; font-weight: 600; color: #10b981; letter-spacing: 0.5px;">HEALTHCARE PATIENT DATA EXFILTRATION</span>
@@ -117,8 +117,8 @@
         </div>
 
         <!-- Case 5 -->
-        <div class="feature-card">
-          <div class="feature-icon-wrapper" style="color: #00f2fe; border-color: rgba(0,242,254,0.3); background: rgba(0,242,254,0.1);">
+        <div class="cyber-card">
+          <div class="card-icon" style="color: #00f2fe; border-color: rgba(0,242,254,0.3); background: rgba(0,242,254,0.1);">
             <i class="fa-solid fa-money-bill-transfer"></i>
           </div>
           <span style="font-size: 12px; font-weight: 600; color: #00f2fe; letter-spacing: 0.5px;">BUSINESS EMAIL COMPROMISE (BEC)</span>
@@ -134,20 +134,25 @@
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
-    <div class="container" style="max-width: 1100px; margin: 0 auto; padding: 0 20px;">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <h3><i class="fa-solid fa-shield-halved" style="color: var(--color-cyan);"></i> PhishDetector</h3>
-          <p>AI-Driven Cyber Threat Intelligence & Phishing URL Classifier.</p>
+    <div class="footer-container">
+      <div class="footer-cols">
+        <div class="footer-col">
+          <a href="{{ url_for('home') }}" class="nav-logo" style="margin-bottom: 16px;">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>PhishDetector</span>
+          </a>
+          <p style="font-size: 14px; color: var(--text-muted);">AI-Driven Cyber Threat Intelligence & Phishing URL Classifier.</p>
         </div>
-        <div class="footer-links">
+
+        <div class="footer-col">
           <h4>Navigation</h4>
           <ul>
             <li><a href="{{ url_for('home') }}">Home</a></li>
             <li><a href="{{ url_for('usecases') }}">Case Studies</a></li>
           </ul>
         </div>
-        <div class="footer-links">
+
+        <div class="footer-col">
           <h4>Security Resources</h4>
           <ul>
             <li><a href="https://safebrowsing.google.com/safebrowsing/report_phish/?hl=en" target="_blank">Google Safe Browsing</a></li>
@@ -155,6 +160,7 @@
           </ul>
         </div>
       </div>
+
       <div class="footer-bottom">
         &copy; 2026 PhishDetector. All rights reserved. Powered by Machine Learning Heuristics.
       </div>
