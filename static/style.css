@@ -837,6 +837,23 @@ a:hover {
   box-shadow: 0 0 20px var(--color-cyan-glow);
 }
 
+.author-avatar-img {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-cyan);
+  box-shadow: 0 0 10px var(--color-cyan-glow);
+  transition: transform 0.3s ease;
+}
+
+.author-profile-box:hover .author-avatar-img {
+  transform: scale(1.08);
+  box-shadow: 0 0 16px var(--color-cyan-glow);
+}
+
 .author-badge {
   display: inline-flex;
   align-items: center;
