@@ -12,7 +12,7 @@ warnings.filterwarnings('ignore')
 
 app = Flask(__name__, static_folder='static', static_url_path='/static')
 
-# Load model if present, otherwise set to None
+# Load model if present
 gbc = None
 if os.path.exists('newmodel.pkl'):
     try:
@@ -31,14 +31,27 @@ def predict():
         url = request.form['name']
         try:
             obj = FeatureExtraction(url)
-            x = np.array(obj.getFeaturesList()).reshape(1, 30)
+            features = obj.getFeaturesList()
+            x = np.array(features).reshape(1, 30)
+            
+            # Calculate dynamic heuristic score based on 30 indicators
+            safe_indicators = sum(1 for f in features if f == 1)
+            heuristic_score = round((safe_indicators / 30.0) * 100, 1)
+
             if gbc is not None:
                 y_pred = gbc.predict(x)[0]
+                if hasattr(gbc, "predict_proba"):
+                    proba = gbc.predict_proba(x)[0]
+                    score = round(float(max(proba)) * 100, 1)
+                else:
+                    score = heuristic_score
             else:
-                y_pred = 1 # Fallback prediction if model missing
-            name = convertion(url, int(y_pred))
+                y_pred = 1 if heuristic_score >= 60.0 else -1
+                score = heuristic_score
+
+            name = convertion(url, int(y_pred), score)
         except Exception as e:
-            name = [url, "Error analyzing URL", "Try again", False]
+            name = [url, "Error analyzing URL", "Try again", False, 50.0]
         return render_template('index.html', name=name)
     return render_template('index.html')
 

@@ -2,14 +2,13 @@ import requests
 import re
 import csv
 
-def convertion(url, prediction):
-    name = []
+def convertion(url, prediction, score=98.5):
     if shortlink(url) == -1:
-        return [url, "Not Safe", "Still want to Continue"]
+        return [url, "Not Safe", "Still want to Continue", False, score]
     elif prediction == 1:
-        return [url, "Safe", "Continue", "1"]
+        return [url, "Safe", "Continue", True, score]
     else:
-        return [url, "Not Safe", "Still want to Continue"]
+        return [url, "Not Safe", "Still want to Continue", False, score]
 
 def shortlink(url):
     match = re.search(

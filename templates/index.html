@@ -92,7 +92,7 @@
         <div class="result-box safe">
           <div class="result-verdict-title">
             <span><i class="fa-solid fa-circle-check"></i> LEGITIMATE / SAFE WEBSITE</span>
-            <span style="font-size: 13px; font-weight: 600; background: rgba(16,185,129,0.2); padding: 4px 14px; border-radius: 20px; color: #10b981;">99.4% Security Score</span>
+            <span style="font-size: 13px; font-weight: 600; background: rgba(16,185,129,0.2); padding: 4px 14px; border-radius: 20px; color: #10b981;">{{ name[4] }}% Security Score</span>
           </div>
           <div class="scanned-url-display">
             <i class="fa-solid fa-link" style="margin-right: 8px;"></i> Target URL: <strong>{{ name[0] }}</strong>
@@ -108,7 +108,7 @@
         <div class="result-box unsafe">
           <div class="result-verdict-title">
             <span><i class="fa-solid fa-triangle-exclamation"></i> HIGH RISK PHISHING DETECTED</span>
-            <span style="font-size: 13px; font-weight: 600; background: rgba(239,68,68,0.2); padding: 4px 14px; border-radius: 20px; color: #ef4444;">Threat Severity: HIGH</span>
+            <span style="font-size: 13px; font-weight: 600; background: rgba(239,68,68,0.2); padding: 4px 14px; border-radius: 20px; color: #ef4444;">Threat Risk: {{ name[4] }}%</span>
           </div>
           <div class="scanned-url-display">
             <i class="fa-solid fa-link" style="margin-right: 8px;"></i> Target URL: <strong>{{ name[0] }}</strong>
