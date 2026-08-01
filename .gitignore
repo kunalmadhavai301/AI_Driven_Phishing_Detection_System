@@ -1,0 +1,22 @@
+# Virtual environments and temporary directories
+.venv/
+venv/
+myenv/
+python3.11/
+3.11/
+installed/
+Use/
+if/
+kunal/
+you/
+\#/
+/#/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# OS generated files
+.DS_Store
+Thumbs.db
