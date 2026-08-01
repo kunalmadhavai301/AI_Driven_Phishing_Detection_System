@@ -145,11 +145,11 @@
           <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px;">
             AI-Driven Cyber Threat Intelligence & Phishing URL Classifier.
           </p>
-          <div class="author-profile-box">
+          <div class="author-profile-box" onclick="openAuthorModal()" title="Click to view author profile">
             <img src="/static/assets/img/kunal.jpg" alt="Kunal Madhavai" class="author-avatar-img">
             <div style="font-size: 13px; color: var(--text-main);">
               <span style="display: block; font-weight: 700; color: #ffffff;">Kunal Madhavai</span>
-              <span style="font-size: 11px; color: var(--color-cyan); font-weight: 600;">Author & Developer</span>
+              <span style="font-size: 11px; color: var(--color-cyan); font-weight: 600;">Author & Developer <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 9px; margin-left: 2px;"></i></span>
             </div>
           </div>
           <div class="social-links-row">
@@ -208,7 +208,55 @@
         &copy; 2026 <strong>PhishDetector</strong>. Designed & Developed by <strong>Kunal Madhavai</strong>. All rights reserved.
       </div>
     </div>
-  </footer>
+  <!-- ======= Author Profile Modal Popup ======= -->
+  <div id="authorModal" class="modal-overlay" onclick="closeAuthorModal(event)">
+    <div class="author-modal-card" onclick="event.stopPropagation()">
+      <button class="modal-close-btn" onclick="closeAuthorModal(event)">&times;</button>
+      
+      <!-- High-Res Large Size Profile Photo -->
+      <img src="/static/assets/img/kunal.jpg" alt="Kunal Madhavai" class="author-large-img">
+
+      <h3 class="author-modal-name">Kunal Madhavai</h3>
+      <div class="author-modal-role">Lead Author & System Developer</div>
+
+      <div class="author-info-list">
+        <div class="author-info-item">
+          <i class="fa-solid fa-building-columns"></i>
+          <div>College: <strong>Sanjivani College of Engineering</strong></div>
+        </div>
+        <div class="author-info-item">
+          <i class="fa-solid fa-laptop-code"></i>
+          <div>Department: <strong>Computer Engineering / AI</strong></div>
+        </div>
+        <div class="author-info-item">
+          <i class="fa-solid fa-envelope"></i>
+          <div>Email: <strong>kunal.madhavai24@sanjivani.edu.in</strong></div>
+        </div>
+        <div class="author-info-item">
+          <i class="fa-brands fa-github"></i>
+          <div>GitHub: <strong>github.com/kunalmadhavai301</strong></div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 12px; justify-content: center;">
+        <a href="https://github.com/kunalmadhavai301" target="_blank" class="btn-result-action" style="background: var(--color-cyan); color: #050811;">
+          <i class="fa-brands fa-github"></i> View GitHub Profile
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openAuthorModal() {
+      document.getElementById('authorModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeAuthorModal(event) {
+      document.getElementById('authorModal').classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+  </script>
 
 </body>
 </html>

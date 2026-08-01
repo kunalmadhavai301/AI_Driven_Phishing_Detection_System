@@ -681,6 +681,25 @@ a:hover {
   color: var(--color-cyan);
 }
 
+.author-profile-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 14px;
+  padding: 8px 16px;
+  border-radius: 40px;
+  background: rgba(0, 242, 254, 0.08);
+  border: 1px solid var(--border-cyan);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.author-profile-box:hover {
+  background: rgba(0, 242, 254, 0.16);
+  border-color: var(--color-cyan);
+  box-shadow: 0 0 20px var(--color-cyan-glow);
+}
+
 .author-badge {
   display: inline-flex;
   align-items: center;
@@ -695,15 +714,129 @@ a:hover {
   font-weight: 600;
 }
 
-.author-profile-box {
-  display: inline-flex;
+/*--------------------------------------------------------------
+# Author Profile Modal
+--------------------------------------------------------------*/
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(4, 6, 14, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 9999;
+  display: flex;
   align-items: center;
-  gap: 12px;
-  margin-top: 14px;
-  padding: 8px 16px;
-  border-radius: 40px;
-  background: rgba(0, 242, 254, 0.08);
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.35s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.author-modal-card {
+  background: var(--bg-card);
   border: 1px solid var(--border-cyan);
+  border-radius: 24px;
+  padding: 40px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 40px var(--color-cyan-glow);
+  transform: scale(0.9);
+  transition: transform 0.35s ease;
+}
+
+.modal-overlay.active .author-modal-card {
+  transform: scale(1);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-glass);
+  color: var(--text-muted);
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.modal-close-btn:hover {
+  background: var(--color-red);
+  color: #ffffff;
+  border-color: var(--color-red);
+}
+
+.author-large-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--color-cyan);
+  box-shadow: 0 0 25px var(--color-cyan-glow);
+  margin-bottom: 20px;
+}
+
+.author-modal-name {
+  font-size: 26px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.author-modal-role {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-cyan);
+  margin-bottom: 24px;
+  letter-spacing: 0.5px;
+}
+
+.author-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  text-align: left;
+  background: rgba(5, 8, 17, 0.7);
+  padding: 20px 24px;
+  border-radius: 16px;
+  border: 1px solid var(--border-glass);
+  margin-bottom: 24px;
+}
+
+.author-info-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.author-info-item i {
+  font-size: 18px;
+  color: var(--color-cyan);
+  width: 24px;
+  text-align: center;
+}
+
+.author-info-item strong {
+  color: #ffffff;
 }
 
 .author-avatar-img {
