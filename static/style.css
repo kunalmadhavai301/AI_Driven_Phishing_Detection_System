@@ -695,6 +695,32 @@ a:hover {
   font-weight: 600;
 }
 
+.author-profile-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 14px;
+  padding: 8px 16px;
+  border-radius: 40px;
+  background: rgba(0, 242, 254, 0.08);
+  border: 1px solid var(--border-cyan);
+}
+
+.author-avatar-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-cyan);
+  box-shadow: 0 0 10px var(--color-cyan-glow);
+  transition: transform 0.3s ease;
+}
+
+.author-profile-box:hover .author-avatar-img {
+  transform: scale(1.08);
+  box-shadow: 0 0 16px var(--color-cyan-glow);
+}
+
 .social-links-row {
   display: flex;
   align-items: center;
