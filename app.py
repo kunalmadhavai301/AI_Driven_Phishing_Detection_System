@@ -10,7 +10,7 @@ from feature import FeatureExtraction
 
 warnings.filterwarnings('ignore')
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static', static_url_path='/static')
 
 # Load model if present, otherwise set to None
 gbc = None
